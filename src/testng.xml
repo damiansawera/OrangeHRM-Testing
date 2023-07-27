@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="OrangeHRM Testing Suite">
+
+    <test name="tests.AdminTests" >
+        <classes>
+            <class name="tests.AdminTests" />
+        </classes>
+    </test>
+
+    <test name="tests.PIMTests">
+        <classes>
+            <class name="tests.PIMTests"/>
+        </classes>
+    </test>
+
+    <test name="tests.TimeTests">
+        <classes>
+            <class name="tests.TimeTests"/>
+        </classes>
+    </test>
+
+</suite>
