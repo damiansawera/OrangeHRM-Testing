@@ -15,7 +15,7 @@ public class AdminTests extends TestBase {
         AdminPage adminPage = navigator.goToAdminPage();
         AdminAddUserPage adminAddUserPage = adminPage.addUserPage();
         adminAddUserPage.selectUserRole(role);
-        adminAddUserPage.addEmployeeName("Aleks", "Buda");
+        adminAddUserPage.addEmployeeName("a");
         adminAddUserPage.selectStatus(Status.ENABLED.getStatusName());
         adminAddUserPage.addUsername(username);
         adminAddUserPage.addPassword(password);

@@ -31,11 +31,11 @@ public class AdminAddUserPage {
         userRoleSelectionBox.findElement(selectOption(role)).click();
     }
 
-    public void addEmployeeName(String firstName, String lastName) {
+    public void addEmployeeName(String letter) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement employeeNameBox = driver.findElement(selectField("Employee Name"));
-        employeeNameBox.findElement(employeeNameInputBox).sendKeys(firstName+ " "+lastName);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='oxd-autocomplete-option']//span[text()='"+firstName +"  "+lastName+"']"))).click();
+        employeeNameBox.findElement(employeeNameInputBox).sendKeys(letter);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='oxd-autocomplete-option']//span"))).click();
     }
 
     public void selectStatus(String status) {
