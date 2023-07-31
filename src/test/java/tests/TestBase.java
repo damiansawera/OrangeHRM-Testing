@@ -6,14 +6,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pages.Navigator;
+import pages.HomePage;
 import pages.login_page.LoginPage;
 
 import java.time.Duration;
 
 public class TestBase {
     private WebDriver driver;
-    protected Navigator navigator;
+    protected HomePage homePage;
     protected Faker faker;
 
     @BeforeMethod
@@ -25,7 +25,7 @@ public class TestBase {
         driver.manage().window().maximize();
         driver.get("https://opensource-demo.orangehrmlive.com/");
         new LoginPage(driver).Login("Admin", "admin123");
-        navigator = new Navigator(driver);
+        homePage = new HomePage(driver);
     }
 
     @AfterMethod

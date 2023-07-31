@@ -1,7 +1,9 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.time_page.EditTimesheetsPage;
+import pages.time_page.EmployeeTimesheetsPage;
 import pages.time_page.MyTimesheetsPage;
 import pages.time_page.TimePage;
 
@@ -14,9 +16,11 @@ public class TimeTests extends TestBase {
         int timeInHours = faker.number().numberBetween(1,24);
         String comment = faker.lorem().sentence();
 
-        TimePage timePage = navigator.goToTimePage();
+        TimePage timePage = homePage.goToTimePage();
         MyTimesheetsPage myTimesheets = timePage.timesheetDropdown().selectMyTimesheets();
         EditTimesheetsPage editTimesheets = myTimesheets.clickEditTimesheetsButton();
+        editTimesheets.clearFirstRow();
+        editTimesheets.addRow();
         editTimesheets.selectProject(projectName);
         editTimesheets.selectActivity(activity);
         editTimesheets.addTimeInMondayColumn(String.valueOf(timeInHours));
@@ -24,5 +28,11 @@ public class TimeTests extends TestBase {
         editTimesheets.saveTimesheet();
     }
 
+    @Test
+    public void verifyThatPendingTimesheetsExist() {
+        TimePage timePage = homePage.goToTimePage();
+        EmployeeTimesheetsPage employeeTimesheets = timePage.timesheetDropdown().selectEmployeeTimesheets();
 
+        Assert.assertTrue(employeeTimesheets.hasPendingTimesheets());
+    }
 }

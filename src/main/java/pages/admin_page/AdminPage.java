@@ -2,16 +2,18 @@ package pages.admin_page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import pages.CommonElements;
 
 public class AdminPage {
     WebDriver driver;
-    By addUserButton = By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--secondary']");
+    CommonElements commonElements;
     public AdminPage(WebDriver driver) {
         this.driver = driver;
+        this.commonElements = new CommonElements(driver);
     }
 
     public AdminAddUserPage addUserPage() {
-        driver.findElement(addUserButton).click();
+        driver.findElement(commonElements.addButton).click();
         return new AdminAddUserPage(driver);
     }
 

@@ -6,12 +6,15 @@ import org.openqa.selenium.WebElement;
 
 public class TimePage {
     WebDriver driver;
+    By timesheetsDropdownMenu = By.xpath("//li[contains(@class, 'oxd-topbar-body-nav-tab --parent --visited') and .//span[text()='Timesheets ']]");
+    By myTimesheets = By.xpath("//a[contains(@class, 'oxd-topbar-body-nav-tab-link') and text()='My Timesheets']");
+    By employeeTimesheets = By.xpath("//a[contains(@class, 'oxd-topbar-body-nav-tab-link') and text()='Employee Timesheets']");
     public TimePage(WebDriver driver) {
         this.driver = driver;
     }
 
     public TimesheetsDropdown timesheetDropdown() {
-        WebElement dropdownElement = driver.findElement(By.xpath("//li[contains(@class, 'oxd-topbar-body-nav-tab --parent --visited') and .//span[text()='Timesheets ']]"));
+        WebElement dropdownElement = driver.findElement(timesheetsDropdownMenu);
         return new TimesheetsDropdown(dropdownElement);
     }
     public class TimesheetsDropdown {
@@ -21,9 +24,16 @@ public class TimePage {
         }
         public MyTimesheetsPage selectMyTimesheets() {
             dropdownElement.click();
-            WebElement myTimesheetsOption = dropdownElement.findElement(By.xpath("//a[contains(@class, 'oxd-topbar-body-nav-tab-link') and text()='My Timesheets']"));
+            WebElement myTimesheetsOption = dropdownElement.findElement(myTimesheets);
             myTimesheetsOption.click();
             return new MyTimesheetsPage(driver);
+        }
+        public  EmployeeTimesheetsPage selectEmployeeTimesheets() {
+            dropdownElement.click();
+            WebElement employeeTimesheetsOption = dropdownElement.findElement(employeeTimesheets);
+            employeeTimesheetsOption.click();
+            return new EmployeeTimesheetsPage(driver);
+
         }
     }
 }

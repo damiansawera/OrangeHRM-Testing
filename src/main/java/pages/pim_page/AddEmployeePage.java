@@ -2,26 +2,25 @@ package pages.pim_page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import pages.CommonElements;
 
 public class AddEmployeePage {
     WebDriver driver;
-    By saveButton = By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']");
-    By firstNameBox = By.name("firstName");
-    By lastNameBox = By.name("lastName");
-
+    CommonElements commonElements;
     public AddEmployeePage(WebDriver driver) {
         this.driver = driver;
+        this.commonElements = new CommonElements(driver);
     }
 
     public void setFirstName(String firstName) {
-        driver.findElement(firstNameBox).sendKeys(firstName);
+        driver.findElement(commonElements.firstNameBox).sendKeys(firstName);
     }
 
     public void setLastName(String lastName) {
-        driver.findElement(lastNameBox).sendKeys(lastName);
+        driver.findElement(commonElements.lastNameBox).sendKeys(lastName);
     }
 
     public void saveNewEmployeeButton() {
-        driver.findElement(saveButton).click();
+        driver.findElement(commonElements.saveButton).click();
     }
 }

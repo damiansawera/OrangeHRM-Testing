@@ -8,7 +8,7 @@ public class PIMTests extends TestBase {
 
     @Test
     public void addNewEmployee() {
-    PimPage pimPage = navigator.goToPimPage();
+    PimPage pimPage = homePage.goToPimPage();
     AddEmployeePage addEmployeePage = pimPage.addNewEmployeePage();
     addEmployeePage.setFirstName(faker.name().firstName());
     addEmployeePage.setLastName(faker.name().lastName());

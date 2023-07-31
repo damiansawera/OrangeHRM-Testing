@@ -18,7 +18,4 @@ public class LoginPage {
         driver.findElement(passwordBox).sendKeys(password);
         driver.findElement(loginButton).click();
     }
-    public String getCurrentURL() {
-       return driver.getCurrentUrl();
-    }
 }

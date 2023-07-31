@@ -4,11 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.admin_page.AdminPage;
 import pages.pim_page.PimPage;
+import pages.recruitment_page.RecruitmentPage;
 import pages.time_page.TimePage;
 
-public class Navigator {
+public class HomePage {
     WebDriver driver;
-    public Navigator(WebDriver driver) {
+    public HomePage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -26,5 +27,14 @@ public class Navigator {
     public TimePage goToTimePage() {
         driver.findElement(By.xpath("//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Time']")).click();
         return new TimePage(driver);
+    }
+
+    public RecruitmentPage goToRecruitmentPage() {
+        driver.findElement(By.xpath("//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Recruitment']")).click();
+        return new RecruitmentPage(driver);
+
+    }
+    public boolean isLoggedIn() {
+        return driver.getCurrentUrl().equals("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");
     }
 }

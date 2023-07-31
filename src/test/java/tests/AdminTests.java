@@ -12,7 +12,7 @@ public class AdminTests extends TestBase {
         String role = Roles.ADMIN.getRoleName();
         String username = faker.name().username();
         String password = faker.internet().password();
-        AdminPage adminPage = navigator.goToAdminPage();
+        AdminPage adminPage = homePage.goToAdminPage();
         AdminAddUserPage adminAddUserPage = adminPage.addUserPage();
         adminAddUserPage.selectUserRole(role);
         adminAddUserPage.addEmployeeName("a");
