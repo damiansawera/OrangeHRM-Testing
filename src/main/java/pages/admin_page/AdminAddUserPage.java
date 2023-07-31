@@ -16,7 +16,7 @@ public class AdminAddUserPage {
     By firstAutocompleteOption = By.xpath("//div[@class='oxd-autocomplete-option']//span");
     public AdminAddUserPage(WebDriver driver) {
         this.driver = driver;
-        this.commonElements = new CommonElements(driver);
+        this.commonElements = new CommonElements();
     }
 
     public void selectUserRole(String role) {
@@ -25,7 +25,7 @@ public class AdminAddUserPage {
         userRoleSelectionBox.findElement(commonElements.selectOption(role)).click();
     }
 
-    public void addEmployeeName(String letter) {
+    public void setEmployeeName(String letter) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement employeeNameBox = driver.findElement(commonElements.selectField("Employee Name"));
         employeeNameBox.findElement(employeeNameInputBox).sendKeys(letter);
@@ -38,12 +38,12 @@ public class AdminAddUserPage {
         statusSelectionBox.findElement(commonElements.selectOption(status)).click();
     }
 
-    public void addUsername(String Username) {
+    public void setUsername(String Username) {
         WebElement usernameBox = driver.findElement(commonElements.selectField("Username"));
         usernameBox.findElement(commonElements.inputBox).sendKeys(Username);
     }
 
-    public void addPassword(String password) {
+    public void setPassword(String password) {
         WebElement passwordBox = driver.findElement(commonElements.selectField("Password"));
         passwordBox.findElement(commonElements.inputBox).sendKeys(password);
     }
@@ -57,6 +57,6 @@ public class AdminAddUserPage {
     public void saveUserButton() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.invisibilityOf(driver.findElement(inputFieldErrorMessage)));
-        driver.findElement(commonElements.saveButton).click();
+        commonElements.clickSaveButton(driver);
     }
 }

@@ -15,10 +15,10 @@ public class AdminTests extends TestBase {
         AdminPage adminPage = homePage.goToAdminPage();
         AdminAddUserPage adminAddUserPage = adminPage.addUserPage();
         adminAddUserPage.selectUserRole(role);
-        adminAddUserPage.addEmployeeName("a");
+        adminAddUserPage.setEmployeeName("a");
         adminAddUserPage.selectStatus(Status.ENABLED.getStatusName());
-        adminAddUserPage.addUsername(username);
-        adminAddUserPage.addPassword(password);
+        adminAddUserPage.setUsername(username);
+        adminAddUserPage.setPassword(password);
         adminAddUserPage.confirmPassword(password);
         adminAddUserPage.saveUserButton();
 

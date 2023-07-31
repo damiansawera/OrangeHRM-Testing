@@ -32,7 +32,6 @@ public class HomePage {
     public RecruitmentPage goToRecruitmentPage() {
         driver.findElement(By.xpath("//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Recruitment']")).click();
         return new RecruitmentPage(driver);
-
     }
     public boolean isLoggedIn() {
         return driver.getCurrentUrl().equals("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");

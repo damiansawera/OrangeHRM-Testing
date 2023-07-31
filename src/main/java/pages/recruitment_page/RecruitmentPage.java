@@ -8,27 +8,10 @@ public class RecruitmentPage {
     CommonElements commonElements;
     public RecruitmentPage(WebDriver driver) {
         this.driver = driver;
-        this.commonElements = new CommonElements(driver);
+        this.commonElements = new CommonElements();
     }
-
-    public void addFirstName() {
-    }
-
-    public void addLastName() {
-    }
-
-    public void selectVacancy() {
-    }
-
-    public void addEmail() {
-    }
-
-    public void addContactNumber() {
-    }
-
-    public void addResume() {
-    }
-
-    public void clickSaveButton() {
+    public AddCandidatePage clickAddCandidateButton() {
+        driver.findElement(commonElements.addButton).click();
+        return new AddCandidatePage(driver);
     }
 }

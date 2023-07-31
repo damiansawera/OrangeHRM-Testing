@@ -28,7 +28,7 @@ public class EditTimesheetsPage {
 
     public EditTimesheetsPage(WebDriver driver) {
         this.driver = driver;
-        this.commonElements = new CommonElements(driver);
+        this.commonElements = new CommonElements();
     }
 
     public void selectProject(String projectName) {
@@ -40,7 +40,7 @@ public class EditTimesheetsPage {
     }
 
     public void selectActivity(String activity) {
-       WebElement activityDropdown = getCellInTimesheetTable(1).findElement(commonElements.selectActivityDropdown);
+       WebElement activityDropdown = getCellInTimesheetTable(1).findElement(commonElements.selectDropdown);
        activityDropdown.click();
        activityDropdown.findElement(commonElements.selectOption(activity)).click();
     }

@@ -9,7 +9,7 @@ public class PimPage {
 
     public PimPage(WebDriver driver) {
         this.driver = driver;
-        this.commonElements = new CommonElements(driver);
+        this.commonElements = new CommonElements();
     }
 
     public AddEmployeePage addNewEmployeePage() {

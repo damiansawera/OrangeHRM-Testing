@@ -4,10 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class CommonElements {
-    WebDriver driver;
-
-    public CommonElements(WebDriver driver) {
-        this.driver = driver;
+    public CommonElements() {
     }
     public By dropdownMenu = By.className("oxd-select-text-input");
     public By inputBox = By.xpath(".//input[@class='oxd-input oxd-input--active']");
@@ -15,7 +12,7 @@ public class CommonElements {
     public By addButton = By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--secondary']");
     public By firstNameBox = By.name("firstName");
     public By lastNameBox = By.name("lastName");
-    public By selectActivityDropdown = By.xpath(".//div[contains(@class, 'oxd-select-text-input') and text()='-- Select --']");
+    public By selectDropdown = By.xpath(".//div[contains(@class, 'oxd-select-text-input') and text()='-- Select --']");
     public By clearButtonIcon = By.xpath("//i[@class='oxd-icon bi-trash']");
 
 
@@ -27,5 +24,14 @@ public class CommonElements {
     }
     public By selectAutocompleteOption(String autocompleteOption) {
         return By.xpath("//div[@class='oxd-autocomplete-option']//span[text()='"+autocompleteOption+"']");
+    }
+    public void setFirstName(WebDriver driver, String firstName) {
+        driver.findElement(firstNameBox).sendKeys(firstName);
+    }
+    public void setLastName(WebDriver driver, String lastName) {
+        driver.findElement(lastNameBox).sendKeys(lastName);
+    }
+    public void clickSaveButton(WebDriver driver) {
+        driver.findElement(saveButton).click();
     }
 }
