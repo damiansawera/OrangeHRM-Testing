@@ -8,9 +8,21 @@
         </classes>
     </test>
 
+    <test name="tests.LoginTests">
+        <classes>
+            <class name="tests.LoginTests"/>
+        </classes>
+    </test>
+
     <test name="tests.PIMTests">
         <classes>
             <class name="tests.PIMTests"/>
+        </classes>
+    </test>
+
+    <test name="tests.RecruitmentTests">
+    <classes>
+            <class name="tests.RecruitmentTests"/>
         </classes>
     </test>
 
@@ -19,5 +31,4 @@
             <class name="tests.TimeTests"/>
         </classes>
     </test>
-
 </suite>
