@@ -2,14 +2,22 @@ package tests;
 
 import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
 import pages.login_page.LoginPage;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class TestBase {
     private WebDriver driver;
@@ -29,7 +37,17 @@ public class TestBase {
     }
 
     @AfterMethod
-    void tearDown() {
+    void tearDown(ITestResult result) {
+        if(ITestResult.FAILURE == result.getStatus()) {
+            var camera = (TakesScreenshot) driver;
+            File screenshot = camera.getScreenshotAs(OutputType.FILE);
+            try{
+                String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss"));
+                Files.move(screenshot.toPath(), new File("src/main/resources/screenshots/" + result.getName() + "_" + timestamp + ".png").toPath());
+            } catch (IOException e){
+                e.printStackTrace();
+            }
+        }
         driver.quit();
     }
 }
