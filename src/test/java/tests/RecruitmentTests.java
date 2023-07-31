@@ -10,7 +10,7 @@ public class RecruitmentTests extends TestBase {
 
     @Test
     public void successfullyAddCandidate() {
-        String vacancy = "Senior QA Lead";
+        String vacancy = "Senior QA ";
         String resume = new File("src/main/resources/resume.pdf").getAbsolutePath();
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
