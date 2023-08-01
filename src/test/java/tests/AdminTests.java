@@ -12,17 +12,16 @@ public class AdminTests extends TestBase {
         String role = Roles.ADMIN.getRoleName();
         String username = faker.name().username();
         String password = faker.internet().password();
+        String status = Status.ENABLED.getStatusName();
         AdminPage adminPage = homePage.goToAdminPage();
         AdminAddUserPage adminAddUserPage = adminPage.addUserPage();
         adminAddUserPage.selectUserRole(role);
         adminAddUserPage.setEmployeeName("a");
-        adminAddUserPage.selectStatus(Status.ENABLED.getStatusName());
+        adminAddUserPage.selectStatus(status);
         adminAddUserPage.setUsername(username);
         adminAddUserPage.setPassword(password);
         adminAddUserPage.confirmPassword(password);
         adminAddUserPage.saveUserButton();
-
-        //TODO: Assertion
     }
 }
 

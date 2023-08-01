@@ -4,14 +4,13 @@ import org.testng.annotations.Test;
 import pages.recruitment_page.AddCandidatePage;
 import pages.recruitment_page.RecruitmentPage;
 
-import java.io.File;
-
 public class RecruitmentTests extends TestBase {
 
     @Test
-    public void successfullyAddCandidate() {
+    public void successfullyAddCandidate()  {
         String vacancy = "Senior QA Lead";
-        String resume = new File("src/main/resources/resume.pdf").getAbsolutePath();
+
+        String resume = "src/main/resources/resume.pdf";
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         String email = faker.internet().emailAddress();
