@@ -1,17 +1,19 @@
 pipeline {
     agent any
     environment {
-        isRemote = env.isRemote == 'true' ? true : false
+        isRemote = env.isRemote == "true" ? true : false
     }
     stages {
         stage('Prepare Environment') {
             steps {
                 script {
-                    if (isRemote) {
-                        bat 'powershell -Command "(gc configuration.properties) -replace \'isRemote=.*\', \'isRemote=true\' | Out-File configuration.properties"'
-                    } else {
-                        bat 'powershell -Command "(gc configuration.properties) -replace \'isRemote=.*\', \'isRemote=false\' | Out-File configuration.properties"'
-                    }
+                    def filePath = "configuration.properties"
+                    def isRemoteValue = isRemote ? "true" : "false"
+
+
+                    bat label: 'Update configuration.properties', script: '''
+                        (Get-Content "%filePath%") | ForEach-Object { $_ -replace '^isRemote=.*', 'isRemote=%isRemoteValue%' } | Set-Content "%filePath%"
+                    '''
                 }
             }
         }
