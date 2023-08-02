@@ -1,5 +1,9 @@
 <suite name="OrangeHRM Testing Suite">
 
+    <listeners>
+        <listener class-name="utility.AllureTestListener" />
+    </listeners>
+
     <test name="ChromeTests">
         <parameter name="browser" value="chrome" />
         <classes>
