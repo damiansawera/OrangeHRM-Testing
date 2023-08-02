@@ -1,10 +1,10 @@
 pipeline {
     agent any
+    environment {
+        isRemote = env.isRemote
     stages {
         stage('Prepare Environment') {
             steps {
-            environment {
-                    isRemote = env.isRemote
                 }
                 script {
                     if (isRemote) {
