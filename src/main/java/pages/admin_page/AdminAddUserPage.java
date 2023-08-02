@@ -1,6 +1,7 @@
 package pages.admin_page;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,7 +14,7 @@ public class AdminAddUserPage {
     CommonElements commonElements;
     By employeeNameInputBox = By.xpath(".//input[@placeholder='Type for hints...']");
     By inputFieldErrorMessage = By.xpath("//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']");
-    By firstAutocompleteOption = By.xpath("//div[@class='oxd-autocomplete-option']//span");
+    By firstAutocompleteOption = By.xpath(".//div[@class='oxd-autocomplete-dropdown --positon-bottom']//span");
     public AdminAddUserPage(WebDriver driver) {
         this.driver = driver;
         this.commonElements = new CommonElements();
@@ -29,6 +30,7 @@ public class AdminAddUserPage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement employeeNameBox = driver.findElement(commonElements.selectField("Employee Name"));
         employeeNameBox.findElement(employeeNameInputBox).sendKeys(letter);
+        wait.until(ExpectedConditions.presenceOfElementLocated(firstAutocompleteOption));
         wait.until(ExpectedConditions.elementToBeClickable(firstAutocompleteOption)).click();
     }
 
@@ -56,7 +58,11 @@ public class AdminAddUserPage {
 
     public void saveUserButton() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(inputFieldErrorMessage)));
+        try {
+            wait.until(ExpectedConditions.invisibilityOf(driver.findElement(inputFieldErrorMessage)));
+        } catch (NoSuchElementException e) {
+            //log error message
+        }
         commonElements.clickSaveButton(driver);
     }
 }

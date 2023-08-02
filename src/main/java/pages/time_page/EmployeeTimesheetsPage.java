@@ -11,7 +11,8 @@ public class EmployeeTimesheetsPage {
         this.driver = driver;
     }
 
-    public boolean hasPendingTimesheets() {
+    public boolean hasPendingTimesheets() throws InterruptedException {
+        Thread.sleep(3000);
         if(!driver.findElement(recordsFound).getText().equals("No Records Found"))
             return true;
         return false;

@@ -1,7 +1,9 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class CommonElements {
     public CommonElements() {
@@ -32,6 +34,8 @@ public class CommonElements {
         driver.findElement(lastNameBox).sendKeys(lastName);
     }
     public void clickSaveButton(WebDriver driver) {
-        driver.findElement(saveButton).click();
+        WebElement saveButtonElement = driver.findElement(saveButton);
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", saveButtonElement);
     }
 }

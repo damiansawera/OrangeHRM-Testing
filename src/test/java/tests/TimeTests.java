@@ -29,7 +29,7 @@ public class TimeTests extends TestBase {
     }
 
     @Test
-    public void verifyThatPendingTimesheetsExist() {
+    public void verifyThatPendingTimesheetsExist() throws InterruptedException {
         TimePage timePage = homePage.goToTimePage();
         EmployeeTimesheetsPage employeeTimesheets = timePage.timesheetDropdown().selectEmployeeTimesheets();
 
