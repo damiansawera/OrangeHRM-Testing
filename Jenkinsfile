@@ -1,15 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Clean Allure Reports') {
-            steps {
-                script {
-                    // Delete the allure-reports and target directories
-                    deleteDir(dir: 'allure-reports')
-                    deleteDir(dir: 'target/')
-                }
-            }
-        }
         stage('isRemote') {
             steps {
                 script {
