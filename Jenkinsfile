@@ -1,14 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Workspace Cleanup') {
-            steps {
-                script {
-                    // Clean the allure-results directory
-                    deleteDir(dir: 'target/allure-results')
-                }
-            }
-        }
         stage('replace') {
             steps {
                 script {
