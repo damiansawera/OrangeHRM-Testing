@@ -23,18 +23,18 @@ pipeline {
                 }
             }
         }
-    }
-    stage('Generate Allure Report') {
-        steps {
-            script {
-                ws('.') {
-                    allure([
-                        includeProperties: false,
-                        jdk: '',
-                        properties: [],
-                        reportBuildPolicy: 'ALWAYS',
-                        results: [[path: 'allure-results']]
-                    ])
+        stage('Generate Allure Report') {
+            steps {
+                script {
+                    ws('.') {
+                        allure([
+                            includeProperties: false,
+                            jdk: '',
+                            properties: [],
+                            reportBuildPolicy: 'ALWAYS',
+                            results: [[path: 'allure-results']]
+                        ])
+                    }
                 }
             }
         }
