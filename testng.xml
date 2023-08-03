@@ -8,10 +8,10 @@
         <parameter name="browser" value="chrome" />
         <classes>
             <class name="tests.AdminTests"/>
-<!--            <class name="tests.LoginTests"/>-->
-<!--            <class name="tests.PIMTests"/>-->
-<!--            <class name="tests.RecruitmentTests"/>-->
-<!--            <class name="tests.TimeTests"/>-->
+            <class name="tests.LoginTests"/>
+            <class name="tests.PIMTests"/>
+            <class name="tests.RecruitmentTests"/>
+            <class name="tests.TimeTests"/>
         </classes>
     </test>
 
@@ -20,7 +20,7 @@
         <classes>
 <!--            <class name="tests.AdminTests"/>-->
             <class name="tests.LoginTests"/>
-            <class name="tests.PIMTests"/>
+<!--            <class name="tests.PIMTests"/>-->
 <!--            <class name="tests.RecruitmentTests"/>-->
 <!--            <class name="tests.TimeTests"/>-->
         </classes>
