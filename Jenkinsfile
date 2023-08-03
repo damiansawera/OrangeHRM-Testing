@@ -35,6 +35,9 @@ pipeline {
                     ])
                 }
             }
+            always {
+                cleanWs()
+            }
         }
     }
 }
