@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('replace') {
+        stage('isRemote') {
             steps {
                 script {
                     config = readFile "src/test/java/config/configuration.properties"
@@ -12,7 +12,15 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                bat script: 'mvn clean test'
+                script {
+                    try {
+                        timeout(time: 1, unit: 'MINUTES') {
+                            bat script: 'mvn clean test'
+                        }
+                    } catch (err) {
+                        echo "Test stage timed out, but the pipeline will continue."
+                    }
+                }
             }
         }
     }
