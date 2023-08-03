@@ -26,7 +26,7 @@ pipeline {
         stage('Generate Allure Report') {
             steps {
                 script {
-                    ws('$workspace/target/') {
+                    ws('target/') {
                         allure([
                             includeProperties: false,
                             jdk: '',
