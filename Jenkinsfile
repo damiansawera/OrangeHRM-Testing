@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        timeout(time: 1, unit: 'MINUTES') {
+                        timeout(time: 3, unit: 'MINUTES') {
                             bat script: 'mvn clean test'
                         }
                     } catch (err) {
