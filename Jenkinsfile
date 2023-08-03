@@ -3,7 +3,10 @@ pipeline {
     stages {
         stage('Workspace Cleanup') {
             steps {
-                cleanWs()
+                script {
+                    // Clean the allure-results directory
+                    deleteDir(dir: 'target/allure-results')
+                }
             }
         }
         stage('replace') {
