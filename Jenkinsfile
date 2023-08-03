@@ -24,18 +24,19 @@ pipeline {
             }
         }
     }
-    post {
-        success {
-            allure([
-                includeProperties: false,
-                jdk: '',
-                properties: [],
-                reportBuildPolicy: 'ALWAYS',
-                results: [[path: 'target/allure-results']]
-            ])
-        }
-        always {
-            cleanWs()
+    stage('Generate Allure Report') {
+        steps {
+            script {
+                ws('.') {
+                    allure([
+                        includeProperties: false,
+                        jdk: '',
+                        properties: [],
+                        reportBuildPolicy: 'ALWAYS',
+                        results: [[path: 'allure-results']]
+                    ])
+                }
+            }
         }
     }
 }
