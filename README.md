@@ -1,3 +1,18 @@
+# 🚀 Selenium Test Automation Project for OrangeHRM
+
+This project is a comprehensive Selenium-based test automation framework designed for testing the popular Human Resource Management system, OrangeHRM. It leverages the power of Page Object Model (POM) to create scalable and maintainable test scripts.
+
+### Key Features:
+
+- Utilizes **Selenium WebDriver** for interacting with web elements and performing actions on the web application.
+- Implements **Page Object Model** design pattern for better code organization and reusability.
+- Supports cross-browser testing by utilizing **Selenium Grid with Docker** for parallel test execution on Chrome, Edge, and Firefox browsers.
+- Allows users to easily switch between running tests on a local environment or using the Selenium Grid with Docker, providing optimal flexibility for various testing scenarios.
+- Uses the **allure-reports** library for generating interactive and informative test reports, helping you visualize test results effectively.
+- **Jenkinsfile** is included for setting up automated **CI/CD pipelines effortlessly**, with built-in support for dynamic configuration changes based on build parameters.
+- The configuration.properties file enables users to control test behavior through simple configuration options.
+- **Faker** library integration facilitates the generation of realistic test data for various scenarios.
+
 ## Pre-requisites
 Before running this Selenium-based testing project, ensure that you have the following pre-requisites and dependencies installed:
 
@@ -45,3 +60,6 @@ Now you can run the pipeline by clicking **Build with parameters** and set the p
 If you are running your tests remotely with docker, make sure your Docker Desktop is turned on.
 
 You can see Allure Report as a build artifact after the pipeline finishes. (Make sure you have Allure plugin installed in Jenkins). 
+
+
+With this test automation framework, you can easily create and execute end-to-end tests for OrangeHRM. Happy testing! 😊
