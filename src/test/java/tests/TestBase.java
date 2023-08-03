@@ -4,8 +4,6 @@ import com.github.javafaker.Faker;
 import config.ConfigLoader;
 import config.DockerSetup;
 import config.DriverFactory;;
-import io.qameta.allure.Attachment;
-import junit.framework.TestListener;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +11,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.HomePage;
 import pages.login_page.LoginPage;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -45,29 +44,16 @@ public class TestBase {
     @AfterMethod
     void tearDown(ITestResult result) {
         if(ITestResult.FAILURE == result.getStatus()) {
-            // Your existing code to take a screenshot
             var camera = (TakesScreenshot) driver;
             File screenshot = camera.getScreenshotAs(OutputType.FILE);
-            try {
+            try{
                 String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss"));
-                File destination = new File("src/main/resources/screenshots/" + result.getName() + "_" + timestamp + ".png");
-                Files.move(screenshot.toPath(), destination.toPath());
-                
-                attachScreenshotToAllure(destination);
-            } catch (IOException e) {
+                Files.move(screenshot.toPath(), new File("src/main/resources/screenshots/" + result.getName() + "_" + timestamp + ".png").toPath());
+            } catch (IOException e){
                 e.printStackTrace();
             }
         }
         driver.quit();
-    }
-    @Attachment(value = "Screenshot on failure", type = "image/png")
-    public byte[] attachScreenshotToAllure(File screenshot) {
-        try {
-            return Files.readAllBytes(screenshot.toPath());
-        } catch (IOException e) {
-            e.printStackTrace();
-            return new byte[0];
-        }
     }
     @AfterSuite
     public void stopDocker() throws IOException, InterruptedException {
@@ -77,6 +63,7 @@ public class TestBase {
             DockerSetup.stopDockerGrid();
         }
     }
+
     public WebDriver getDriver() {
         return driver;
     }

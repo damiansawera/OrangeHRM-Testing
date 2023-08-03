@@ -2,10 +2,13 @@ package tests;
 
 import enums.Roles;
 import enums.Status;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.admin_page.AdminAddUserPage;
 import pages.admin_page.AdminPage;
+import utility.AllureTestListener;
 
+@Listeners({AllureTestListener.class})
 public class AdminTests extends TestBase {
     @Test(description = "User is created and role is set to Admin")
     public void addAdminUser() {

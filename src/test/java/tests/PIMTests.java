@@ -1,9 +1,12 @@
 package tests;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.pim_page.AddEmployeePage;
 import pages.pim_page.PimPage;
+import utility.AllureTestListener;
 
+@Listeners({AllureTestListener.class})
 public class PIMTests extends TestBase {
 
     @Test(description = "New employee is successfully added to the PIM page")

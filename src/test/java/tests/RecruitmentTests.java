@@ -1,12 +1,15 @@
 package tests;
 
 import config.ConfigLoader;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.recruitment_page.AddCandidatePage;
 import pages.recruitment_page.RecruitmentPage;
+import utility.AllureTestListener;
 
 import java.io.File;
 
+@Listeners({AllureTestListener.class})
 public class RecruitmentTests extends TestBase {
 
     @Test(description = "New candidate for the recruitment process is successfully created")

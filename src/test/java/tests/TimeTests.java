@@ -1,12 +1,15 @@
 package tests;
 
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.time_page.EditTimesheetsPage;
 import pages.time_page.EmployeeTimesheetsPage;
 import pages.time_page.MyTimesheetsPage;
 import pages.time_page.TimePage;
+import utility.AllureTestListener;
 
+@Listeners({AllureTestListener.class})
 public class TimeTests extends TestBase {
 
     @Test(description = "New record with comment in timesheet of currently logged in user is added")
