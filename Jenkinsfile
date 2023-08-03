@@ -34,9 +34,9 @@ pipeline {
                         results: [[path: 'target/allure-results']]
                     ])
                 }
-            }
-            always {
-                cleanWs()
+                script {
+                    cleanWs()
+                }
             }
         }
     }
