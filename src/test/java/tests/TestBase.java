@@ -11,6 +11,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.HomePage;
 import pages.login_page.LoginPage;
+import utility.AllureTestListener;
 
 import java.io.File;
 import java.io.IOException;
@@ -43,13 +44,17 @@ public class TestBase {
 
     @AfterMethod
     void tearDown(ITestResult result) {
-        if(ITestResult.FAILURE == result.getStatus()) {
+        if (ITestResult.FAILURE == result.getStatus()) {
             var camera = (TakesScreenshot) driver;
-            File screenshot = camera.getScreenshotAs(OutputType.FILE);
-            try{
+            byte[] screenshot = camera.getScreenshotAs(OutputType.BYTES);
+            try {
                 String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss"));
-                Files.move(screenshot.toPath(), new File("src/main/resources/screenshots/" + result.getName() + "_" + timestamp + ".png").toPath());
-            } catch (IOException e){
+                File destination = new File("src/main/resources/screenshots/" + result.getName() + "_" + timestamp + ".png");
+                Files.write(destination.toPath(), screenshot);
+
+                AllureTestListener allureTestListener = new AllureTestListener();
+                allureTestListener.saveScreenshotPNG(screenshot);
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
