@@ -26,15 +26,13 @@ pipeline {
         stage('Generate Allure Report') {
             steps {
                 script {
-                    ws('target/') {
-                        allure([
-                            includeProperties: false,
-                            jdk: '',
-                            properties: [],
-                            reportBuildPolicy: 'ALWAYS',
-                            results: [[path: 'allure-results']]
-                        ])
-                    }
+                    allure([
+                        includeProperties: false,
+                        jdk: '',
+                        properties: [],
+                        reportBuildPolicy: 'ALWAYS',
+                        results: [[path: 'target/allure-results']]
+                    ])
                 }
             }
         }
