@@ -4,7 +4,9 @@ pipeline {
         stage('Clean Allure Reports') {
             steps {
                 script {
-                    bat "allure generate --clean --output allure-report"
+                    // Delete the allure-reports and target directories
+                    deleteDir(dir: 'allure-reports')
+                    deleteDir(dir: 'target/')
                 }
             }
         }
@@ -22,7 +24,7 @@ pipeline {
                 script {
                     try {
                         timeout(time: 3, unit: 'MINUTES') {
-                            bat 'mvn clean test'
+                            bat script: 'mvn clean test'
                         }
                     } catch (err) {
                         echo "Test stage timed out, but the pipeline will continue."
@@ -40,6 +42,9 @@ pipeline {
                 reportBuildPolicy: 'ALWAYS',
                 results: [[path: 'target/allure-results']]
             ])
+        }
+        always {
+            cleanWs()
         }
     }
 }
