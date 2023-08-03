@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     config = readFile "src/test/java/config/configuration.properties"
-                    newConfig = config.replaceAll("isRemote=.*","browserName=${isRemote}")
+                    newConfig = config.replaceAll("isRemote=.*","isRemote=${isRemote}")
                     writeFile file: "src/test/java/config/configuration.properties", text: "${newConfig}"
                 }
             }
