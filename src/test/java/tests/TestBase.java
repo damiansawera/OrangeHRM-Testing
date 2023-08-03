@@ -34,7 +34,7 @@ public class TestBase {
     }
     @BeforeMethod
     @Parameters("browser")
-    public void setUp(String browser) throws IOException {
+    public void setUp(@Optional("chrome") String browser) throws IOException {
         faker = new Faker();
         driver = DriverFactory.getDriver(browser);
         new LoginPage(driver).Login("Admin", "admin123");
