@@ -4,7 +4,7 @@ pipeline {
         stage('Clean Allure Reports') {
             steps {
                 script {
-                    bat "rd /s /q target/allure-results"
+                    bat "allure generate --clean --output target/allure-results"
                 }
             }
         }
@@ -38,7 +38,7 @@ pipeline {
                 jdk: '',
                 properties: [],
                 reportBuildPolicy: 'ALWAYS',
-                results: [[path: 'allure-results']]
+                results: [[path: 'target/allure-results']]
             ])
         }
     }
