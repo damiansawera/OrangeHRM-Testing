@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import config.ConfigLoader;
 import config.DockerSetup;
 import config.DriverFactory;;
+import junit.framework.TestListener;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -28,7 +29,6 @@ public class TestBase {
         boolean isRemote = configLoader.isRemote();
         if (isRemote) {
             DockerSetup.startDockerGrid();
-            return;
         }
 
     }
@@ -61,7 +61,9 @@ public class TestBase {
         boolean isRemote = configLoader.isRemote();
         if (isRemote) {
             DockerSetup.stopDockerGrid();
-            return;
         }
+    }
+    public WebDriver getDriver() {
+        return driver;
     }
 }

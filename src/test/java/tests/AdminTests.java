@@ -7,7 +7,7 @@ import pages.admin_page.AdminAddUserPage;
 import pages.admin_page.AdminPage;
 
 public class AdminTests extends TestBase {
-    @Test
+    @Test(description = "User is created and role is set to Admin")
     public void addAdminUser() {
         String role = Roles.ADMIN.getRoleName();
         String username = faker.name().username();

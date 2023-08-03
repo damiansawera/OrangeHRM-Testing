@@ -9,7 +9,7 @@ import java.io.File;
 
 public class RecruitmentTests extends TestBase {
 
-    @Test
+    @Test(description = "New candidate for the recruitment process is successfully created")
     public void successfullyAddCandidate()  {
         ConfigLoader configLoader = new ConfigLoader("src/test/java/config/configuration.properties");
         boolean isRemote = configLoader.isRemote();

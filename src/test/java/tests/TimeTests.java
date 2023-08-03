@@ -9,7 +9,7 @@ import pages.time_page.TimePage;
 
 public class TimeTests extends TestBase {
 
-    @Test
+    @Test(description = "New record with comment in timesheet of currently logged in user is added")
     public void addTimesheet() {
         String projectName = "The Coca-Cola Company - Coke - Phase 1";
         String activity = "Administration";
