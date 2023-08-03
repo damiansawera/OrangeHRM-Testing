@@ -4,7 +4,7 @@ pipeline {
         stage('Clean Allure Reports') {
             steps {
                 script {
-                    bat "rd /s /q target\\allure-results"
+                    bat "rd /s /q target/allure-results"
                 }
             }
         }
