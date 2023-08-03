@@ -4,8 +4,7 @@ pipeline {
         stage('Clean Allure Reports') {
             steps {
                 script {
-                    deleteDir(dir: 'allure-reports')
-                    deleteDir(dir: 'target/')
+                    bat "rd /s /q target\\allure-results"
                 }
             }
         }
@@ -23,7 +22,7 @@ pipeline {
                 script {
                     try {
                         timeout(time: 3, unit: 'MINUTES') {
-                            bat script: 'mvn clean test'
+                            bat 'mvn clean test'
                         }
                     } catch (err) {
                         echo "Test stage timed out, but the pipeline will continue."
@@ -39,7 +38,7 @@ pipeline {
                 jdk: '',
                 properties: [],
                 reportBuildPolicy: 'ALWAYS',
-                results: [[path: 'target/allure-results']]
+                results: [[path: 'allure-results']]
             ])
         }
     }
