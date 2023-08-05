@@ -1,11 +1,13 @@
 package pages;
 
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class CommonElements {
+    private Logger logger;
     public CommonElements() {
     }
     public By dropdownMenu = By.className("oxd-select-text-input");

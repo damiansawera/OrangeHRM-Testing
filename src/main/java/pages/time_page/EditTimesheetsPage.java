@@ -1,5 +1,6 @@
 package pages.time_page;
 
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +12,7 @@ import java.util.List;
 
 public class EditTimesheetsPage {
     WebDriver driver;
+    private Logger logger;
     CommonElements commonElements;
     By timesheetTable = By.xpath("//table[@class='orangehrm-timesheet-table --editable']");
     By projectInputBox = By.xpath(".//input[@placeholder='Type for hints...']");
@@ -26,12 +28,14 @@ public class EditTimesheetsPage {
         return cell;
     }
 
-    public EditTimesheetsPage(WebDriver driver) {
+    public EditTimesheetsPage(WebDriver driver, Logger logger) {
         this.driver = driver;
+        this.logger = logger;
         this.commonElements = new CommonElements();
     }
 
     public void selectProject(String projectName) {
+        logger.info("Selecting project: " + projectName);
         String projectShortName = "coca";
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement projectInputField = getCellInTimesheetTable(0).findElement(projectInputBox);
@@ -40,31 +44,39 @@ public class EditTimesheetsPage {
     }
 
     public void selectActivity(String activity) {
+        logger.info("Selecting activity: " + activity);
        WebElement activityDropdown = getCellInTimesheetTable(1).findElement(commonElements.selectDropdown);
        activityDropdown.click();
        activityDropdown.findElement(commonElements.selectOption(activity)).click();
     }
 
     public void addTimeInMondayColumn(String time) {
+        logger.info("Adding time in monday column: " + time);
         WebElement inputField = getCellInTimesheetTable(2).findElement(commonElements.inputBox);
         inputField.sendKeys(time);
     }
 
     public void addCommentInMondayColumn(String comment) {
+        logger.info("Adding comment in monday column: " + comment);
         WebElement addCommentButton = getCellInTimesheetTable(2).findElement(commentButton);
         addCommentButton.click();
         driver.findElement(commentInputBox).sendKeys(comment);
     }
 
     public void saveTimesheet() {
+        logger.info("Saving timesheet");
         driver.findElement(commonElements.saveButton).click();
+
     }
 
     public void addRow() {
+        logger.info("Adding new row");
         driver.findElement(addNewRow).click();
+
     }
 
     public void clearFirstRow() {
+        logger.info("Clearing first row");
         WebElement clearButton = driver.findElement(commonElements.clearButtonIcon);
         clearButton.click();
     }

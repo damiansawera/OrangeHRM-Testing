@@ -4,6 +4,8 @@ import com.github.javafaker.Faker;
 import config.ConfigLoader;
 import config.DockerSetup;
 import config.DriverFactory;;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -19,9 +21,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class TestBase {
-    private WebDriver driver;
+    protected WebDriver driver;
     protected HomePage homePage;
     protected Faker faker;
+    protected Logger logger;
 
     @BeforeSuite
     public void startDocker() throws IOException, InterruptedException {
@@ -36,9 +39,10 @@ public class TestBase {
     @Parameters("browser")
     public void setUp(@Optional("chrome") String browser) throws IOException {
         faker = new Faker();
+        logger = LogManager.getLogger(TestBase.class);
         driver = DriverFactory.getDriver(browser);
-        new LoginPage(driver).Login("Admin", "admin123");
-        homePage = new HomePage(driver);
+        new LoginPage(driver, logger).Login("Admin", "admin123");
+        homePage = new HomePage(driver, logger);
     }
 
     @AfterMethod
