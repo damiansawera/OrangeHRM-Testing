@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.admin_page.AdminPage;

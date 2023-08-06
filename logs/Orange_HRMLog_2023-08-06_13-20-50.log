@@ -1,0 +1,6 @@
+13:20:54.064 [main] INFO  utility.Log - Logging as an Admin on browser: chrome
+13:20:54.067 [main] INFO  utility.Log - Logging with username: Admin and password: admin123
+13:20:55.228 [main] INFO  utility.Log - ======== Start Test Case: verifyThatPendingTimesheetsExist ========
+13:21:00.349 [main] ERROR utility.Log - Screenshot on failed verifyThatPendingTimesheetsExist test taken.
+13:21:00.880 [main] INFO  utility.Log - Driver quit successfully
+

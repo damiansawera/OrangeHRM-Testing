@@ -1,0 +1,145 @@
+13:30:17.018 [main] INFO  utility.Log - Logging as an Admin on browser: chrome
+13:30:17.020 [main] INFO  utility.Log - Logging with username: Admin and password: admin123
+13:30:18.433 [main] INFO  utility.Log - ======== Start Test Case: addAdminUser ========
+13:30:19.952 [main] INFO  utility.Log - Opening form to add new user
+13:30:22.242 [main] INFO  utility.Log - Selecting employee name: 
+13:30:22.242 [main] INFO  utility.Log - Selecting status: Enabled
+13:30:22.308 [main] INFO  utility.Log - Setting username: ronny.okeefe
+13:30:22.363 [main] INFO  utility.Log - Setting password: owieuv3e7mgi
+13:30:22.414 [main] INFO  utility.Log - Confirming password
+13:30:22.473 [main] INFO  utility.Log - Saving new user
+13:30:23.544 [main] INFO  utility.Log - ======== End Test Case: addAdminUser ========
+13:30:23.692 [main] INFO  utility.Log - Driver quit successfully
+
+13:30:27.169 [main] INFO  utility.Log - Logging as an Admin on browser: chrome
+13:30:27.169 [main] INFO  utility.Log - Logging with username: Admin and password: admin123
+13:30:28.243 [main] INFO  utility.Log - ======== Start Test Case: loggedInSuccessfully ========
+13:30:28.248 [main] INFO  utility.Log - Logged in successfully.
+13:30:28.248 [main] INFO  utility.Log - ======== End Test Case: loggedInSuccessfully ========
+13:30:28.375 [main] INFO  utility.Log - Driver quit successfully
+
+13:30:32.287 [main] INFO  utility.Log - Logging as an Admin on browser: chrome
+13:30:32.288 [main] INFO  utility.Log - Logging with username: Admin and password: admin123
+13:30:32.658 [main] INFO  utility.Log - ======== Start Test Case: addNewEmployee ========
+13:30:34.924 [main] INFO  utility.Log - Opening form to add new employee
+13:30:35.853 [main] INFO  utility.Log - Setting first name: Luke
+13:30:36.084 [main] INFO  utility.Log - Setting last name: Streich
+13:30:36.129 [main] INFO  utility.Log - Saving new employee
+13:30:36.148 [main] INFO  utility.Log - ======== End Test Case: addNewEmployee ========
+13:30:36.267 [main] INFO  utility.Log - Driver quit successfully
+
+13:30:40.375 [main] INFO  utility.Log - Logging as an Admin on browser: chrome
+13:30:40.375 [main] INFO  utility.Log - Logging with username: Admin and password: admin123
+13:30:40.763 [main] INFO  utility.Log - ======== Start Test Case: successfullyAddCandidate ========
+13:30:42.655 [main] INFO  utility.Log - Opening form to add new candidate
+13:30:43.787 [main] INFO  utility.Log - Setting first name: Ambrose
+13:30:44.100 [main] INFO  utility.Log - Setting last name: Swaniawski
+13:30:44.158 [main] INFO  utility.Log - Selecting vacancy: Senior QA Lead
+13:30:44.374 [main] INFO  utility.Log - Setting email: robin.wyman@yahoo.com
+13:30:44.448 [main] INFO  utility.Log - Setting contact number: 8086
+13:30:44.495 [main] INFO  utility.Log - Uploading resume
+13:30:44.518 [main] INFO  utility.Log - Saving new candidate
+13:30:44.535 [main] INFO  utility.Log - ======== End Test Case: successfullyAddCandidate ========
+13:30:44.661 [main] INFO  utility.Log - Driver quit successfully
+
+13:30:48.018 [main] INFO  utility.Log - Logging as an Admin on browser: chrome
+13:30:48.019 [main] INFO  utility.Log - Logging with username: Admin and password: admin123
+13:30:49.210 [main] INFO  utility.Log - ======== Start Test Case: addTimesheet ========
+13:30:52.504 [main] INFO  utility.Log - Clearing first row
+13:30:53.020 [main] INFO  utility.Log - Adding new row
+13:30:53.055 [main] INFO  utility.Log - Selecting project: The Coca-Cola Company - Coke - Phase 1
+13:30:54.195 [main] INFO  utility.Log - Selecting activity: Administration
+13:30:54.462 [main] INFO  utility.Log - Adding time in monday column: 16
+13:30:54.545 [main] INFO  utility.Log - Adding comment in monday column: Officia autem ea sunt facere.
+13:30:54.663 [main] INFO  utility.Log - Saving timesheet
+13:30:54.696 [main] INFO  utility.Log - ======== End Test Case: addTimesheet ========
+13:30:54.822 [main] INFO  utility.Log - Driver quit successfully
+
+13:30:58.795 [main] INFO  utility.Log - Logging as an Admin on browser: chrome
+13:30:58.795 [main] INFO  utility.Log - Logging with username: Admin and password: admin123
+13:31:00.065 [main] INFO  utility.Log - ======== Start Test Case: verifyThatPendingTimesheetsExist ========
+13:31:02.706 [main] INFO  utility.Log - Pending timesheets exist
+13:31:02.707 [main] INFO  utility.Log - ======== End Test Case: verifyThatPendingTimesheetsExist ========
+13:31:02.828 [main] INFO  utility.Log - Driver quit successfully
+
+13:31:06.793 [main] INFO  utility.Log - Logging as an Admin on browser: edge
+13:31:06.794 [main] INFO  utility.Log - Logging with username: Admin and password: admin123
+13:31:07.319 [main] INFO  utility.Log - ======== Start Test Case: loggedInSuccessfully ========
+13:31:08.188 [main] INFO  utility.Log - Logged in successfully.
+13:31:08.188 [main] INFO  utility.Log - ======== End Test Case: loggedInSuccessfully ========
+13:31:08.340 [main] INFO  utility.Log - Driver quit successfully
+
+13:31:12.394 [main] INFO  utility.Log - Logging as an Admin on browser: edge
+13:31:12.394 [main] INFO  utility.Log - Logging with username: Admin and password: admin123
+13:31:13.534 [main] INFO  utility.Log - ======== Start Test Case: addNewEmployee ========
+13:31:15.057 [main] INFO  utility.Log - Opening form to add new employee
+13:31:15.915 [main] INFO  utility.Log - Setting first name: Sal
+13:31:16.136 [main] INFO  utility.Log - Setting last name: Larson
+13:31:16.191 [main] INFO  utility.Log - Saving new employee
+13:31:16.207 [main] INFO  utility.Log - ======== End Test Case: addNewEmployee ========
+13:31:16.394 [main] INFO  utility.Log - Driver quit successfully
+
+13:31:19.968 [main] INFO  utility.Log - Logging as an Admin on browser: edge
+13:31:19.968 [main] INFO  utility.Log - Logging with username: Admin and password: admin123
+13:31:21.079 [main] INFO  utility.Log - ======== Start Test Case: successfullyAddCandidate ========
+13:31:22.228 [main] INFO  utility.Log - Opening form to add new candidate
+13:31:23.042 [main] INFO  utility.Log - Setting first name: Iliana
+13:31:23.583 [main] INFO  utility.Log - Setting last name: Smitham
+13:31:23.636 [main] INFO  utility.Log - Selecting vacancy: Senior QA Lead
+13:31:23.825 [main] INFO  utility.Log - Setting email: marhta.hammes@hotmail.com
+13:31:23.910 [main] INFO  utility.Log - Setting contact number: 3777
+13:31:23.955 [main] INFO  utility.Log - Uploading resume
+13:31:23.977 [main] INFO  utility.Log - Saving new candidate
+13:31:23.993 [main] INFO  utility.Log - ======== End Test Case: successfullyAddCandidate ========
+13:31:24.144 [main] INFO  utility.Log - Driver quit successfully
+
+13:31:28.633 [main] INFO  utility.Log - Logging as an Admin on browser: firefox
+13:31:28.633 [main] INFO  utility.Log - Logging with username: Admin and password: admin123
+13:31:29.632 [main] INFO  utility.Log - ======== Start Test Case: addAdminUser ========
+13:31:30.623 [main] INFO  utility.Log - Opening form to add new user
+13:31:33.313 [main] INFO  utility.Log - Selecting employee name: 
+13:31:33.313 [main] INFO  utility.Log - Selecting status: Enabled
+13:31:33.734 [main] INFO  utility.Log - Setting username: virgilio.bode
+13:31:33.746 [main] INFO  utility.Log - Setting password: 8t395xqb7k2en
+13:31:33.758 [main] INFO  utility.Log - Confirming password
+13:31:33.772 [main] INFO  utility.Log - Saving new user
+13:31:43.787 [main] INFO  utility.Log - ======== End Test Case: addAdminUser ========
+13:31:44.474 [main] INFO  utility.Log - Driver quit successfully
+
+13:31:48.833 [main] INFO  utility.Log - Logging as an Admin on browser: firefox
+13:31:48.833 [main] INFO  utility.Log - Logging with username: Admin and password: admin123
+13:31:49.753 [main] INFO  utility.Log - ======== Start Test Case: loggedInSuccessfully ========
+13:31:49.755 [main] INFO  utility.Log - Logged in successfully.
+13:31:49.755 [main] INFO  utility.Log - ======== End Test Case: loggedInSuccessfully ========
+13:31:50.499 [main] INFO  utility.Log - Driver quit successfully
+
+13:31:54.801 [main] INFO  utility.Log - Logging as an Admin on browser: firefox
+13:31:54.801 [main] INFO  utility.Log - Logging with username: Admin and password: admin123
+13:31:55.764 [main] INFO  utility.Log - ======== Start Test Case: addNewEmployee ========
+13:31:56.738 [main] INFO  utility.Log - Opening form to add new employee
+13:31:57.504 [main] INFO  utility.Log - Setting first name: Norberto
+13:31:57.746 [main] INFO  utility.Log - Setting last name: Kuhn
+13:31:57.757 [main] INFO  utility.Log - Saving new employee
+13:31:57.764 [main] INFO  utility.Log - ======== End Test Case: addNewEmployee ========
+13:31:58.545 [main] INFO  utility.Log - Driver quit successfully
+
+13:32:04.416 [main] INFO  utility.Log - Logging as an Admin on browser: firefox
+13:32:04.416 [main] INFO  utility.Log - Logging with username: Admin and password: admin123
+13:32:05.477 [main] INFO  utility.Log - ======== Start Test Case: addTimesheet ========
+13:32:09.169 [main] INFO  utility.Log - Clearing first row
+13:32:09.878 [main] INFO  utility.Log - Adding new row
+13:32:10.095 [main] INFO  utility.Log - Selecting project: The Coca-Cola Company - Coke - Phase 1
+13:32:11.390 [main] INFO  utility.Log - Selecting activity: Administration
+13:32:11.841 [main] INFO  utility.Log - Adding time in monday column: 8
+13:32:11.866 [main] INFO  utility.Log - Adding comment in monday column: Cum id cupiditate ad nihil omnis consequatur non.
+13:32:12.123 [main] INFO  utility.Log - Saving timesheet
+13:32:12.628 [main] INFO  utility.Log - ======== End Test Case: addTimesheet ========
+13:32:13.382 [main] INFO  utility.Log - Driver quit successfully
+
+13:32:17.400 [main] INFO  utility.Log - Logging as an Admin on browser: firefox
+13:32:17.400 [main] INFO  utility.Log - Logging with username: Admin and password: admin123
+13:32:18.538 [main] INFO  utility.Log - ======== Start Test Case: verifyThatPendingTimesheetsExist ========
+13:32:20.922 [main] INFO  utility.Log - Pending timesheets exist
+13:32:20.922 [main] INFO  utility.Log - ======== End Test Case: verifyThatPendingTimesheetsExist ========
+13:32:21.613 [main] INFO  utility.Log - Driver quit successfully
+

@@ -1,11 +1,14 @@
 package pages.time_page;
 
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.CommonElements;
+import utility.Log;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -32,6 +35,7 @@ public class EditTimesheetsPage {
     }
 
     public void selectProject(String projectName) {
+        Log.info("Selecting project: " + projectName);
         String projectShortName = "coca";
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement projectInputField = getCellInTimesheetTable(0).findElement(projectInputBox);
@@ -40,31 +44,39 @@ public class EditTimesheetsPage {
     }
 
     public void selectActivity(String activity) {
+        Log.info("Selecting activity: " + activity);
        WebElement activityDropdown = getCellInTimesheetTable(1).findElement(commonElements.selectDropdown);
        activityDropdown.click();
        activityDropdown.findElement(commonElements.selectOption(activity)).click();
     }
 
     public void addTimeInMondayColumn(String time) {
+        Log.info("Adding time in monday column: " + time);
         WebElement inputField = getCellInTimesheetTable(2).findElement(commonElements.inputBox);
         inputField.sendKeys(time);
     }
 
     public void addCommentInMondayColumn(String comment) {
+        Log.info("Adding comment in monday column: " + comment);
         WebElement addCommentButton = getCellInTimesheetTable(2).findElement(commentButton);
         addCommentButton.click();
         driver.findElement(commentInputBox).sendKeys(comment);
     }
 
     public void saveTimesheet() {
+        Log.info("Saving timesheet");
         driver.findElement(commonElements.saveButton).click();
+
     }
 
     public void addRow() {
+        Log.info("Adding new row");
         driver.findElement(addNewRow).click();
+
     }
 
     public void clearFirstRow() {
+        Log.info("Clearing first row");
         WebElement clearButton = driver.findElement(commonElements.clearButtonIcon);
         clearButton.click();
     }
