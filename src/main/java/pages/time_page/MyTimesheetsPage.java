@@ -6,18 +6,16 @@ import org.openqa.selenium.WebDriver;
 
 public class MyTimesheetsPage {
     WebDriver driver;
-    private Logger logger;
     private By selectButton(String button) {
         return By.xpath("//button[contains(@class, 'oxd-button oxd-button--medium oxd-button--ghost') and text()='"+button+"']");
     }
 
-    public MyTimesheetsPage(WebDriver driver, Logger logger) {
+    public MyTimesheetsPage(WebDriver driver) {
         this.driver = driver;
-        this.logger = logger;
     }
 
     public EditTimesheetsPage clickEditTimesheetsButton() {
         driver.findElement(selectButton(" Edit ")).click();
-        return new EditTimesheetsPage(driver, logger);
+        return new EditTimesheetsPage(driver);
     }
 }

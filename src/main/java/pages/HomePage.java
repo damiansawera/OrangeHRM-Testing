@@ -10,31 +10,29 @@ import pages.time_page.TimePage;
 
 public class HomePage {
     WebDriver driver;
-    private Logger logger;
-    public HomePage(WebDriver driver, Logger logger) {
+    public HomePage(WebDriver driver) {
         this.driver = driver;
-        this.logger = logger;
     }
 
     public AdminPage goToAdminPage() {
         driver.findElement(By.xpath("//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Admin']")).click();
-        return new AdminPage(driver, logger);
+        return new AdminPage(driver);
     }
 
     public PimPage goToPimPage() {
         driver.findElement(By.xpath("//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='PIM']")).click();
-        return new PimPage(driver, logger);
+        return new PimPage(driver);
     }
 
 
     public TimePage goToTimePage() {
         driver.findElement(By.xpath("//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Time']")).click();
-        return new TimePage(driver, logger);
+        return new TimePage(driver);
     }
 
     public RecruitmentPage goToRecruitmentPage() {
         driver.findElement(By.xpath("//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Recruitment']")).click();
-        return new RecruitmentPage(driver, logger);
+        return new RecruitmentPage(driver);
     }
     public boolean isLoggedIn() {
         return driver.getCurrentUrl().equals("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");

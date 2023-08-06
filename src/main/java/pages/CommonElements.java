@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class CommonElements {
-    private Logger logger;
     public CommonElements() {
     }
     public By dropdownMenu = By.className("oxd-select-text-input");

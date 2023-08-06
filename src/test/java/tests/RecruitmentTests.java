@@ -1,19 +1,21 @@
 package tests;
 
 import config.ConfigLoader;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.recruitment_page.AddCandidatePage;
 import pages.recruitment_page.RecruitmentPage;
-import utility.AllureTestListener;
+import utility.Log;
 
 import java.io.File;
 
-@Listeners({AllureTestListener.class})
+import static org.testng.Reporter.getCurrentTestResult;
+
 public class RecruitmentTests extends TestBase {
 
     @Test(description = "New candidate for the recruitment process is successfully created")
     public void successfullyAddCandidate()  {
+        String testCaseName = getCurrentTestName(getCurrentTestResult());
+        Log.startTestCase(testCaseName);
         ConfigLoader configLoader = new ConfigLoader("src/test/java/config/configuration.properties");
         boolean isRemote = configLoader.isRemote();
         String vacancy = "Senior QA Lead";
@@ -37,5 +39,7 @@ public class RecruitmentTests extends TestBase {
         addCandidatePage.setContactNumber(contactNumber);
         addCandidatePage.setResume(resume);
         addCandidatePage.clickSaveButton();
+
+        Log.endTestCase(testCaseName);
     }
 }
