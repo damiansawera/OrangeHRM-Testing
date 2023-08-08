@@ -12,6 +12,7 @@ This project is a comprehensive Selenium-based test automation framework designe
 - **Jenkinsfile** is included for setting up automated **CI/CD pipelines effortlessly**, with built-in support for dynamic configuration changes based on build parameters.
 - The configuration.properties file enables users to control test behavior through simple configuration options.
 - **Faker** library integration facilitates the generation of realistic test data for various scenarios.
+- [WORK IN PROGRESS] **Cucumber** - Empowers behavior-driven development (BDD) by enabling Gherkin syntax for writing human-readable test scenarios and automatically linking them to executable step definitions in Java.
 
 ## Pre-requisites
 Before running this Selenium-based testing project, ensure that you have the following pre-requisites and dependencies installed:
